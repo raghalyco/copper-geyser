@@ -184,9 +184,29 @@ nav {
 }
 .hero-sub {
   font-size: 1rem; color: var(--muted);
-  margin-bottom: 34px; max-width: 440px; line-height: 1.8;
+  margin-bottom: 24px; max-width: 440px; line-height: 1.8;
 }
 .hero-sub strong { color: var(--cream); font-weight: 500; }
+.hero-cert {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(193,122,60,.08);
+  border: 1px solid rgba(193,122,60,.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 26px;
+  max-width: 420px;
+}
+.hero-cert img {
+  width: 54px; height: 54px; object-fit: cover; border-radius: 10px;
+  border: 1px solid rgba(193,122,60,.2);
+  flex-shrink: 0;
+}
+.hero-cert strong {
+  display: block; font-size: .92rem; color: var(--cream); margin-bottom: 2px;
+}
+.hero-cert span {
+  font-size: .76rem; color: var(--muted); line-height: 1.45;
+}
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-trust {
   display: flex; align-items: center; gap: 14px;
@@ -397,6 +417,77 @@ nav {
 .pspecs li::before {
   content: ''; width: 5px; height: 5px; border-radius: 50%;
   background: var(--copper); flex-shrink: 0;
+}
+
+.pricing-block {
+  margin-top: 42px;
+  padding: 28px;
+  background: rgba(193,122,60,.06);
+  border: 1px solid rgba(193,122,60,.16);
+  border-radius: var(--radius);
+}
+.pricing-header {
+  margin-bottom: 24px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+.price-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(13,11,8,.65);
+  border: 1px solid rgba(193,122,60,.14);
+}
+.price-model {
+  font-family: 'Space Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--copper-lt);
+  margin-bottom: 8px;
+}
+.price-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.price-meta {
+  font-size: .85rem;
+  color: var(--muted);
+}
+.pricing-note {
+  margin-top: 18px;
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.warranty-box {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(13,11,8,.55);
+  border: 1px solid rgba(193,122,60,.12);
+}
+.warranty-box strong {
+  display: block;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+.warranty-box p {
+  font-size: .88rem;
+  color: var(--muted);
+}
+.warranty-note {
+  font-size: .84rem;
+  color: var(--copper-lt);
+  padding-top: 4px;
 }
 .pcta {
   display: block; text-align: center;
