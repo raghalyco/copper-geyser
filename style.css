@@ -5,18 +5,18 @@
 
 /* ── TOKENS ──────────────────────────────── */
 :root {
-  --bg:           #120D08;
-  --bg-warm:      #1A1208;
-  --surface:      #24170D;
-  --surface-2:    #2E1F12;
-  --copper:       #D18F4C;
-  --copper-lt:    #F0B56C;
-  --copper-pale:  #F5D3A0;
-  --copper-glow:  rgba(209,143,76,.18);
-  --copper-border:rgba(209,143,76,.25);
-  --cream:        #F7E6D2;
-  --muted:        #C7B49A;
-  --muted-2:      #B79E83;
+  --bg:           #f8efe4;
+  --bg-warm:      #fcf6eb;
+  --surface:      #fffdf9;
+  --surface-2:    #f6e8d2;
+  --copper:       #b96b2d;
+  --copper-lt:    #9b4f19;
+  --copper-pale:  #7b4615;
+  --copper-glow:  rgba(185,107,45,.12);
+  --copper-border:rgba(185,107,45,.18);
+  --cream:        #2f2317;
+  --muted:        #6f5b47;
+  --muted-2:      #7c6852;
   --green:        #3AA25A;
   --radius:       14px;
   --radius-sm:    8px;
@@ -25,6 +25,8 @@
 /* ── RESET ───────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; }
+* { font-family: 'Inter', sans-serif !important; }
+em, blockquote, .tradition-quote, .rtext, .footer-tagline { font-style: normal !important; }
 body  {
   background: var(--bg);
   color: var(--cream);
@@ -41,25 +43,25 @@ section     { padding: 88px 24px; }
 
 .eyebrow {
   display: inline-block;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: .6rem; letter-spacing: .15em; text-transform: uppercase;
   color: var(--copper);
-  border: 1px solid rgba(209,143,76,.3);
+  border: 1px solid rgba(185,107,45,.22);
   padding: 5px 12px; border-radius: 4px; margin-bottom: 22px;
 }
 .eyebrow-s {
   display: block;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: .6rem; letter-spacing: .15em; text-transform: uppercase;
   color: var(--copper); margin-bottom: 14px;
 }
 .sec-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.1rem, 5.5vw, 3.2rem);
   font-weight: 700; line-height: 1.1;
   color: var(--cream); margin-bottom: 16px;
 }
-.sec-title em { font-style: italic; color: var(--copper-lt); }
+.sec-title em { font-style: normal; color: var(--copper-lt); }
 .sec-body { color: var(--muted); line-height: 1.8; max-width: 520px; }
 
 .btn-primary {
@@ -90,22 +92,29 @@ section     { padding: 88px 24px; }
 nav {
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 24px;
-  background: rgba(13,11,8,.93);
+  gap: 16px; padding: 14px 24px;
+  background: rgba(255,253,249,.95);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(209,143,76,.14);
+  border-bottom: 1px solid rgba(185,107,45,.14);
 }
 .nav-logo  { display: flex; flex-direction: column; gap: 2px; }
 .nav-logo .l1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.15rem; font-weight: 700;
   color: var(--copper-lt); letter-spacing: .02em;
 }
 .nav-logo .l2 {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Inter', sans-serif;
   font-size: .55rem; color: var(--muted);
   letter-spacing: .12em; text-transform: uppercase;
 }
+.nav-links {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.nav-links a {
+  color: var(--cream); text-decoration: none; font-size: .84rem; font-weight: 600;
+}
+.nav-links a:hover { color: var(--copper-lt); }
 .nav-cta {
   display: flex; align-items: center; gap: 7px;
   background: var(--green); color: #fff;
@@ -149,9 +158,9 @@ nav {
   position: absolute; inset: 0;
   background: linear-gradient(
     to right,
-    var(--bg) 0%,
-    rgba(13,11,8,.8) 20%,
-    rgba(13,11,8,.2) 55%,
+    rgba(248,239,228,.95) 0%,
+    rgba(248,239,228,.8) 20%,
+    rgba(248,239,228,.25) 55%,
     transparent 100%
   );
 }
@@ -159,18 +168,18 @@ nav {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0; height: 30%;
-  background: linear-gradient(to top, var(--bg), transparent);
+  background: linear-gradient(to top, rgba(248,239,228,.95), transparent);
   z-index: 1;
 }
 @media(max-width:767px){ .hero-photo-panel { display: none; } }
 
 .hero-content { position: relative; z-index: 2; max-width: 580px; }
 .hero h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(3rem, 9vw, 5.8rem);
   font-weight: 700; line-height: 1.02; color: var(--cream); margin-bottom: 4px;
 }
-.hero h1 em { font-style: italic; color: var(--copper-lt); }
+.hero h1 em { font-style: normal; color: var(--copper-lt); }
 
 .health-tags {
   display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 24px;
@@ -239,7 +248,7 @@ nav {
 .acard:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,.4); }
 .acard-icon  { font-size: 2.2rem; display: block; margin-bottom: 14px; }
 .acard h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem; font-weight: 700; color: var(--cream);
   margin-bottom: 10px; line-height: 1.25;
 }
@@ -253,9 +262,9 @@ nav {
 
 /* ── TRADITION ───────────────────────────── */
 .tradition {
-  background: #0F0A05;
-  border-top: 1px solid rgba(209,143,76,.12);
-  border-bottom: 1px solid rgba(209,143,76,.12);
+  background: #f8efe4;
+  border-top: 1px solid rgba(185,107,45,.12);
+  border-bottom: 1px solid rgba(185,107,45,.12);
 }
 .tradition-inner {
   display: grid; grid-template-columns: 1fr;
@@ -264,9 +273,9 @@ nav {
 @media(min-width:768px){ .tradition-inner { grid-template-columns: 1fr 1fr; } }
 
 .tradition-quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.1rem);
-  font-style: italic; font-weight: 600;
+  font-weight: 600;
   color: var(--copper-lt); line-height: 1.4;
   margin-bottom: 24px;
   position: relative; padding-left: 22px;
@@ -275,7 +284,7 @@ nav {
   content: '"';
   position: absolute; left: 0; top: -10px;
   font-size: 4rem; color: rgba(209,143,76,.22);
-  font-family: 'Cormorant Garamond', serif; line-height: 1;
+  font-family: 'Inter', sans-serif; line-height: 1;
 }
 .tradition-body { color: var(--muted); line-height: 1.85; font-size: .95rem; }
 .tradition-body p { margin-bottom: 16px; }
@@ -334,7 +343,7 @@ nav {
   letter-spacing: .1em; margin-bottom: 11px; text-transform: uppercase;
 }
 .bcard h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.1rem; font-weight: 600; color: var(--cream); margin-bottom: 8px;
 }
 .bcard p { font-size: .82rem; color: var(--muted); line-height: 1.65; }
@@ -450,7 +459,7 @@ nav {
   margin-bottom: 8px;
 }
 .price-tag {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.55rem;
   font-weight: 700;
   color: var(--cream);
@@ -529,9 +538,9 @@ nav {
 
 /* ── COPPER INSIDE ───────────────────────── */
 .copper-inside {
-  background: linear-gradient(135deg, #0F0A05 0%, #1A0C04 100%);
-  border-top: 1px solid rgba(209,143,76,.12);
-  border-bottom: 1px solid rgba(209,143,76,.12);
+  background: linear-gradient(135deg, #fcf6eb 0%, #f6e8d2 100%);
+  border-top: 1px solid rgba(185,107,45,.12);
+  border-bottom: 1px solid rgba(185,107,45,.12);
 }
 .copper-inside-inner {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -644,9 +653,9 @@ nav {
 
 /* ── INSTALLATION & DEMO ─────────────────── */
 .installation-section {
-  background: #110D07;
-  border-top: 1px solid rgba(209,143,76,.14);
-  border-bottom: 1px solid rgba(209,143,76,.14);
+  background: #fbf2e5;
+  border-top: 1px solid rgba(185,107,45,.14);
+  border-bottom: 1px solid rgba(185,107,45,.14);
 }
 .installation-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
@@ -746,7 +755,7 @@ nav {
   border-radius: var(--radius);
 }
 .visit-cta h4 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem; font-weight: 600;
   color: var(--copper-lt); margin-bottom: 6px;
 }
@@ -767,7 +776,7 @@ nav {
 }
 .pledge-icon { font-size: 2.5rem; flex-shrink: 0; }
 .pledge-body h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem; font-weight: 700; color: var(--copper-lt); margin-bottom: 8px;
 }
 .pledge-body p { color: var(--muted); font-size: .92rem; line-height: 1.75; max-width: 560px; }
@@ -793,7 +802,7 @@ nav {
 .scard:hover { transform: translateY(-4px); border-color: rgba(209,143,76,.25); }
 .scard-icon  { font-size: 1.8rem; display: block; margin-bottom: 12px; }
 .scard h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.05rem; font-weight: 600; color: var(--cream); margin-bottom: 7px;
 }
 .scard p { font-size: .8rem; color: var(--muted); line-height: 1.6; }
@@ -828,7 +837,7 @@ nav {
   display: flex; flex-direction: column; gap: 12px;
 }
 .rstars  { color: var(--copper); font-size: .85rem; letter-spacing: 2px; }
-.rtext   { font-size: .87rem; color: var(--cream); line-height: 1.72; flex: 1; font-style: italic; }
+.rtext   { font-size: .87rem; color: var(--cream); line-height: 1.72; flex: 1; font-style: normal; }
 .rauthor {
   font-family: 'Space Mono', monospace;
   font-size: .62rem; color: var(--muted);
@@ -875,7 +884,7 @@ nav {
 /* ── FOOTER ──────────────────────────────── */
 footer {
   background: var(--surface);
-  border-top: 1px solid rgba(209,143,76,.1);
+  border-top: 1px solid rgba(185,107,45,.1);
   padding: 32px 24px;
   display: flex; flex-direction: column;
   align-items: center; gap: 8px; text-align: center;
@@ -883,12 +892,20 @@ footer {
 footer p { font-size: .76rem; color: var(--muted-2); }
 footer strong { color: var(--muted); }
 .footer-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem; font-style: italic;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; font-style: normal;
   color: var(--copper); margin-bottom: 8px;
 }
 
 /* ── FLOATING WHATSAPP ───────────────────── */
+body, p, h1, h2, h3, h4, h5, h6, blockquote, .eyebrow, .eyebrow-s, .sec-title, .nav-logo, .nav-links a, .hero-sub, .hero-cert strong, .hero-cert span, .trust-text, .acard p, .acard-tag, .tradition-body, .bcard p, .pvol, .ptype, .pspecs li, .price-model, .price-tag, .price-box-item span, .pricing-note, .warranty-box strong, .warranty-box p, .copper-facts, .cfact-body, .mfg-stat-label, .mfg-label, .inst-label, .opoint-body, .visit-cta p, .pledge-body p, .scard p, .score-label, .rauthor, .chip, .cta-meta a, .footer-tagline {
+  font-family: 'Inter', sans-serif;
+}
+
+body, .tradition-quote, .rtext, .footer-tagline {
+  font-style: normal;
+}
+
 .wa-float {
   position: fixed; bottom: 22px; right: 22px; z-index: 999;
   display: flex; align-items: center; gap: 9px;
